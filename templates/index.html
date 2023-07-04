@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Tech</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2>Its For Demo Purpose </h2>
+        <h2>Upload Image Against User ID </h2>
+    </div>
+    <form action="/rest/user/upload-image" enctype="multipart/form-data" method="POST">
+        <div class="form-group">
+
+            <p><label>Input User ID: </label>
+                <input type="number" name="userId"/></p>
+            <p><label>Choose Images: </label>
+                <input type="file" name="pic"/>
+            </p>
+            <p>
+                <input type="submit" value="Upload a file"/>
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+</html>
