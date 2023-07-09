@@ -9,7 +9,7 @@ from flask import jsonify, Blueprint, request, Response
 from werkzeug.utils import secure_filename
 
 from base_util import image_dir
-from database.db_config import close_session, create_session, User, Image
+from database.db_config import close_session, create_session, User
 from json_serialize.json_util import UserJson
 from repository.user_repository import UserRepository
 from service.user_service import UserService
@@ -93,7 +93,7 @@ def upload_image():
                 file_name = secure_filename(file.filename)
                 print(file_name)
                 file_name = user_id + "_" + file_name
-                file.save(os.path.join(image_dir, file_name))
+                # file.save(os.path.join(image_dir, file_name))
                 response = UserService(session_con).insert_user_image(file_name, user_id)
                 session_con.commit()
                 close_session(session_con, con)
