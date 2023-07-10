@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from database.db_config import User, Image
+from database.db_config import User
 from repository.curd_repository import CrudRepository
 
 
@@ -43,6 +43,6 @@ class UserRepository(CrudRepository):
     def find_by_mobile(self, MOBILE):
         return self.session.query(User).filter(User.MOBILE == MOBILE).first()
 
-    def get_image(self, id):
-        # Image.query.filter_by(IMAGE_ID=id).first()
-        return self.session.query(Image).filter(Image.IMAGE_ID == id).first()
+    # def get_image(self, id):
+    #     # Image.query.filter_by(IMAGE_ID=id).first()
+    #     return self.session.query(Image).filter(Image.IMAGE_ID == id).first()

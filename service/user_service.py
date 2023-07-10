@@ -1,6 +1,6 @@
 from flask import jsonify
 
-from database.db_config import User, Image
+from database.db_config import User
 from repository.user_repository import UserRepository
 from util.random_string import randomString
 
@@ -33,10 +33,10 @@ class UserService():
         if user is None:
             return jsonify({"message": "NO User Available"})
 
-    def upload_image(self, data, filename, mimetype):
-        image = Image()
-        image.IMAGE = data.read()
-        image.NAME = filename
-        image.MIMETYPE = mimetype
-        UserRepository(self.session).upload_image(image)
-        return "image"
+    # def upload_image(self, data, filename, mimetype):
+    #     image = Image()
+    #     image.IMAGE = data.read()
+    #     image.NAME = filename
+    #     image.MIMETYPE = mimetype
+    #     UserRepository(self.session).upload_image(image)
+    #     return "image"

@@ -22,7 +22,7 @@ for c in Base.classes:
     print(c)
 
 User = Base.classes.User
-Image = Base.classes.Image
+# Image = Base.classes.Image
 
 Session = sessionmaker()
 
