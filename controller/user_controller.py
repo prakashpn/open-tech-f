@@ -93,7 +93,7 @@ def upload_image():
                 file_name = secure_filename(file.filename)
                 print(file_name)
                 file_name = user_id + "_" + file_name
-                # file.save(os.path.join(image_dir, file_name))
+                file.save(os.path.join(image_dir, file_name))
                 response = UserService(session_con).insert_user_image(file_name, user_id)
                 session_con.commit()
                 close_session(session_con, con)
